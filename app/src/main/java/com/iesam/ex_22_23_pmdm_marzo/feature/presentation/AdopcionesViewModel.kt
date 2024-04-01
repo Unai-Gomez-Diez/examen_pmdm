@@ -12,9 +12,10 @@ import com.iesam.ex_22_23_pmdm_marzo.feature.domain.GetAdoptionsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class AdopcionesViewModel(
+class AdopcionesViewModel @Inject constructor(
     private val getAdoptionsUseCase: GetAdoptionsUseCase
 ): ViewModel() {
     private val _uistate = MutableLiveData<AdoptionUiState>()

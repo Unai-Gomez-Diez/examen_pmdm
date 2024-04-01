@@ -5,7 +5,10 @@ import android.os.Bundle
 import com.iesam.ex_22_23_pmdm_marzo.R
 import com.iesam.ex_22_23_pmdm_marzo.feature.data.AdoptionsDataRepository
 import com.iesam.ex_22_23_pmdm_marzo.feature.presentation.AdopcionesFragment
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.HiltAndroidApp
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

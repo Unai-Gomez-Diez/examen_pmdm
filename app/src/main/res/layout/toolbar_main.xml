@@ -8,7 +8,7 @@
     android:background="@color/design_default_color_secondary">
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/mainToolbar"
-        style="@style/AppSmallToolbar"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
