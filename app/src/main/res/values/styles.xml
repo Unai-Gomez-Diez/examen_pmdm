@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppSmallToolbar" parent="Widget.Material3.Toolbar.Surface">
+        <item name="titleCentered">true</item>
+        <item name="titleTextColor">?attr/colorPrimary</item>
+    </style>
+</resources>

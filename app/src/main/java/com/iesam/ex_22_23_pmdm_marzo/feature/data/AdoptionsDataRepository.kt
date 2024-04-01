@@ -8,9 +8,10 @@ import com.iesam.ex_22_23_pmdm_marzo.app.right
 import com.iesam.ex_22_23_pmdm_marzo.feature.domain.Adoption
 import com.iesam.ex_22_23_pmdm_marzo.feature.domain.AdoptionDetail
 import com.iesam.ex_22_23_pmdm_marzo.feature.domain.AdoptionRepository
+import javax.inject.Inject
 
 
-class AdoptionsDataRepository() : AdoptionRepository {
+class AdoptionsDataRepository @Inject constructor() : AdoptionRepository {
 
     override fun getAdoptions(): Either<ErrorApp, List<Adoption>> {
         return obtainAdoptions().map { adoptionLocalModel ->
