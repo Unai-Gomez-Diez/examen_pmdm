@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetAdoptionsUseCase @Inject constructor(
     private val repository: AdoptionRepository
 ) {
-    suspend operator fun invoke(): Either<ErrorApp, List<Adoption>>{
+    operator fun invoke(): Either<ErrorApp, List<Adoption>>{
         return repository.getAdoptions()
     }
 }

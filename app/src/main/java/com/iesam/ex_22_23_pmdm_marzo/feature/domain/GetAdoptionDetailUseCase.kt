@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetAdoptionDetailUseCase @Inject constructor(
     private val repository: AdoptionRepository
 ) {
-    suspend operator fun invoke(id: Int): Either<ErrorApp, AdoptionDetail>{
+    operator fun invoke(id: Int): Either<ErrorApp, AdoptionDetail>{
         return repository.getDetailAdoption(id)
     }
 }
