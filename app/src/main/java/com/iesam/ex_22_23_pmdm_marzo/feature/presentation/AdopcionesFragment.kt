@@ -15,6 +15,7 @@ import com.iesam.ex_22_23_pmdm_marzo.feature.domain.Adoption
 import com.iesam.ex_22_23_pmdm_marzo.feature.presentation.adapter.AdoptionsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class AdopcionesFragment: Fragment() {
 
@@ -59,6 +60,7 @@ class AdopcionesFragment: Fragment() {
                         context,
                         LinearLayoutManager.VERTICAL
                     )
+
                 )
                 adapter = adoptionsAdapter
             }
@@ -78,7 +80,9 @@ class AdopcionesFragment: Fragment() {
             }else{
                 val listAdoption = it.adoptionsList
                 adoptionsAdapter.submitList(listAdoption)
-
+                adoptionsAdapter.setOnClickDetail {
+                    val action = AdopcionesFragmentDirection
+                }
             }
         }
         viewModel.uiState.observe(viewLifecycleOwner, observer)
