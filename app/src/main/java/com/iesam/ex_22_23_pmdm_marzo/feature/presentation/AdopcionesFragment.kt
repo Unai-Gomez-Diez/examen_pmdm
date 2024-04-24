@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.iesam.ex_22_23_pmdm_marzo.R
 import com.iesam.ex_22_23_pmdm_marzo.app.ErrorApp
 import com.iesam.ex_22_23_pmdm_marzo.databinding.FragmentAdoptionsBinding
 import com.iesam.ex_22_23_pmdm_marzo.feature.domain.Adoption
@@ -65,10 +67,10 @@ class AdopcionesFragment: Fragment() {
                 adapter = adoptionsAdapter
             }
             layoutParent.apply {
-                toolbar.mainToolbar.apply {
+               /* toolbar.mainToolbar.apply {
                     title = "Adopciones"
 
-                }
+                }*/
             }
         }
     }
@@ -81,11 +83,16 @@ class AdopcionesFragment: Fragment() {
                 val listAdoption = it.adoptionsList
                 adoptionsAdapter.submitList(listAdoption)
                 adoptionsAdapter.setOnClickDetail {
-                    val action = AdopcionesFragmentDirection
+                    navigateToDetail(it)
                 }
             }
         }
         viewModel.uiState.observe(viewLifecycleOwner, observer)
+    }
+    private fun navigateToDetail(id: Int){
+        findNavController().navigate(
+            R.id.action_adopcionesFragment_to_detallesFragment
+        )
     }
 
     private fun showError(error: ErrorApp) {
